@@ -5,12 +5,17 @@ import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONArray
+import com.squareup.picasso.Picasso
+import android.widget.ImageView
 
 class apiej : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.apiej)
+        val imageView = findViewById<ImageView>(R.id.imageView17)
+        val imagenUrl = "https://fastly.picsum.photos/id/1071/200/300.jpg?hmac=y09-AL4WisOkuQR4SOKzDWjPHWptbCDbEaFP0yJkKNY"
+        Picasso.get().load(imagenUrl).into(imageView)
 
         val listView = findViewById<ListView>(R.id.listView) // <-- ID corregido
 
@@ -25,7 +30,8 @@ class apiej : AppCompatActivity() {
                     val obj = response.getJSONObject(i)
                     val nombre = obj.getString("nombre")
                     val materia = obj.getString("materia")
-                    listaProfesores.add(profesor(nombre, materia))
+                    val imagen = obj.getString("imagen")
+                    listaProfesores.add(profesor(nombre, materia, imagen))
                 }
 
                 val adapter = ProfesorAdapter(this, listaProfesores)

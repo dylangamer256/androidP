@@ -16,20 +16,22 @@ class MainActivity2 : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main2)
 
-        val imageView6 = findViewById<ImageView>(R.id.imageView6)
-        Picasso.get().load(R.drawable.captura_de_pantalla_2025_03_13_153928).into(imageView6)
-
         val imageView8 = findViewById<ImageView>(R.id.imageView8)
-        Picasso.get().load(R.drawable.image_7).into(imageView8)
+        val imageUrl8 = "https://i.postimg.cc/k4K0xBn4/adobe-express-file.png"
+        Picasso.get().load(imageUrl8).into(imageView8)
 
         val imageView9 = findViewById<ImageView>(R.id.imageView9)
-        Picasso.get().load(R.drawable.adobe_express___file_1).into(imageView9)
+        val imageUrl9 = "https://i.postimg.cc/0rRrV6SB/adobe-express-file-1.png"
+        Picasso.get().load(imageUrl9).into(imageView9)
 
         val imageView10 = findViewById<ImageView>(R.id.imageView10)
-        Picasso.get().load(R.drawable.image_6).into(imageView10)
+        val imageUrl10 = "https://i.postimg.cc/J04WMRLz/image-6.png"
+        Picasso.get().load(imageUrl10).into(imageView10)
+
 
         val imageView11 = findViewById<ImageView>(R.id.imageView11)
-        Picasso.get().load(R.drawable.image_10).into(imageView11)
+        val imageUrl11 = "https://i.postimg.cc/50sR5vhf/image-10.png"
+        Picasso.get().load(imageUrl11).into(imageView11)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
