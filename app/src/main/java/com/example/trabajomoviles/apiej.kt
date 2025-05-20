@@ -1,25 +1,20 @@
 package com.example.trabajomoviles
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import org.json.JSONArray
 import com.squareup.picasso.Picasso
-import android.widget.ImageView
 
 class apiej : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.apiej)
-        val imageView = findViewById<ImageView>(R.id.imageView17)
-        val imagenUrl = "https://fastly.picsum.photos/id/1071/200/300.jpg?hmac=y09-AL4WisOkuQR4SOKzDWjPHWptbCDbEaFP0yJkKNY"
-        Picasso.get().load(imagenUrl).into(imageView)
 
-        val listView = findViewById<ListView>(R.id.listView) // <-- ID corregido
-
-        val estudianteId = 1
+        val listView = findViewById<ListView>(R.id.listView)
+        val estudianteId = 2
 
         ApiService.obtenerProfesores(
             context = this,
@@ -33,6 +28,13 @@ class apiej : AppCompatActivity() {
                     val imagen = obj.getString("imagen")
                     listaProfesores.add(profesor(nombre, materia, imagen))
                 }
+
+
+                if (listaProfesores.isNotEmpty()) {
+                    val imageView = findViewById<ImageView>(R.id.imageView17)
+                    Picasso.get().load(listaProfesores[0].imagen).into(imageView)
+                }
+
 
                 val adapter = ProfesorAdapter(this, listaProfesores)
                 listView.adapter = adapter

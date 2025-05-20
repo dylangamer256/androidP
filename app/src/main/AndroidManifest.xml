@@ -15,8 +15,7 @@
         android:theme="@style/Theme.TrabajoMoviles"
         tools:targetApi="31">
 
-        <!-- 🔥 Pantalla que se abre al iniciar la app -->
-        <activity android:name=".MainActivity"
+                <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +23,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Las otras pantallas también deben estar registradas -->
+
         <activity android:name=".MainActivity2" android:exported="true" />
         <activity android:name=".apiej" android:exported="true" />
 
