@@ -1,14 +1,15 @@
 package com.example.trabajomoviles
+
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Body
 import retrofit2.http.POST
+
+data class LoginRequest(
+    val usuario: String,
+    val contraseña: String
+)
 
 interface LoginApiService {
     @POST("api/login")
-    @FormUrlEncoded
-    fun login(
-        @Field("usuario") usuario: String,
-        @Field("contraseña") contraseña: String
-    ): Call<LoginResponse>
+    fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 }

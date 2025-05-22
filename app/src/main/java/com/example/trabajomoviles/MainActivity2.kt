@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -44,5 +45,20 @@ class MainActivity2 : AppCompatActivity() {
             val intent = Intent(this, apiej::class.java)
             startActivity(intent)
         }
+        val button3 = findViewById<Button>(R.id.button3)
+        button3.setOnClickListener {
+            val intent = Intent(this, retroalimentacion::class.java)
+            startActivity(intent)
+        }
+        val button4 = findViewById<Button>(R.id.button4)
+        button4.setOnClickListener {
+            val intent = Intent(this, tareas::class.java)
+            startActivity(intent)
+        }
+        val token = getSharedPreferences("auth", MODE_PRIVATE)
+            .getString("jwt_token", null)
+
+        Toast.makeText(this, "Token guardado: $token", Toast.LENGTH_SHORT).show()
+
     }
 }

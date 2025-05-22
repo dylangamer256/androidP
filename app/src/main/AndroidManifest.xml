@@ -23,6 +23,13 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".retroalimentacion" />
+        <activity android:name=".materia_biologia" />
+        <activity android:name=".materia_espanol" />
+        <activity android:name=".materia_sociales" />
+        <activity android:name=".tareas" />
+
+
 
         <activity android:name=".MainActivity2" android:exported="true" />
         <activity android:name=".apiej" android:exported="true" />
