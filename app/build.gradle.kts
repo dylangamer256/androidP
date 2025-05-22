@@ -45,7 +45,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("com.android.volley:volley:1.2.1")
     // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0") // O la versión más reciente
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Para la conversión JSON (Gson)
 
 
